@@ -1,0 +1,15 @@
+.post-container {
+	margin: 15px;
+}
+
+.post-container .td:first-letter {
+    text-transform: uppercase;
+}
+
+.borderless td, .borderless th {
+    border: none;
+}
+
+.borderless th {
+	border-bottom: 1px solid #d1c9c9;
+}

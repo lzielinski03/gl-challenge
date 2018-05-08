@@ -1,0 +1,23 @@
+.posts-container .card-columns {
+	list-style: none;
+}
+
+.posts-container {
+	margin: 15px;
+}
+
+.posts-container .h2 {
+	font-size: 1.3em;
+}
+
+.posts-container .h2:first-letter, .posts-container p:first-letter {
+    text-transform: uppercase;
+}
+
+.posts-container .card {
+	box-shadow: 0px 3px #92929266;
+}
+
+.posts-container p {
+	color: #929292;
+}

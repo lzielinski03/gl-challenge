@@ -1,11 +1,19 @@
-<div *ngIf="post">
+<div *ngIf="post" class="post-container">
 	<h1>{{post.title}}</h1>
 	<p>{{post.body}}</p>
-	<ul>
-		<li *ngFor="let comment of post.comments">
-			<span>{{comment.email}}</span>
-			<p>{{comment.body}}</p>
-		</li>
-	</ul>
+	<table class="table borderless">
+		<thead>
+			<tr>
+				<th scope="col">Email</th>
+				<th scope="col">Comment</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr *ngFor="let comment of post.comments">
+			    <td><a href="mailto:{{comment.email}}">{{comment.email}}</a></td>
+			    <td>{{comment.body}}</td>
+			</tr>
+		</tbody>
+	</table>
+	<a routerLink="/posts">Back</a>
 </div>
-<button class="btn btn-primary">Test Button</button>
