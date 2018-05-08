@@ -1,0 +1,10 @@
+<div *ngIf="post">
+	<h1>{{post.title}}</h1>
+	<p>{{post.body}}</p>
+	<ul>
+		<li *ngFor="let comment of post.comments">
+			<span>{{comment.email}}</span>
+			<p>{{comment.body}}</p>
+		</li>
+	</ul>
+</div>
