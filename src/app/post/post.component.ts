@@ -1,10 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
-import { Post } from './../Post';
-import { PostService } from './../post.service';
-import { Observable, Subject, pipe } from 'rxjs';
-import { map, takeUntil, tap } from 'rxjs/operators';
+import { Post } from './../schemas/Post';
+import { PostService } from './../services/post.service';
 
 @Component({
 	selector: 'app-post',

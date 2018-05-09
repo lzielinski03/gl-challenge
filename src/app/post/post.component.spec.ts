@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PostComponent } from './post.component';
+import { PostService } from './../services/post.service';
+import { HttpClientModule } from '@angular/common/http'; 
 
 describe('PostComponent', () => {
   let component: PostComponent;
@@ -8,7 +10,9 @@ describe('PostComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PostComponent ]
+      declarations: [ PostComponent ],
+      providers: [PostService],
+      imports: [HttpClientModule]
     })
     .compileComponents();
   }));

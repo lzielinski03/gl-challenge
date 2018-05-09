@@ -1,14 +1,13 @@
 import { Injectable } from '@angular/core';
-import { Http, Response } from '@angular/http';
+//import { Http, Response } from '@angular/http';
 
-import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 
-import { Observable, Subject, pipe, forkJoin } from 'rxjs';
-import { map, takeUntil, tap, mergeMap, filter } from 'rxjs/operators';
+import { Observable, pipe, forkJoin } from 'rxjs';
+import { map, filter } from 'rxjs/operators';
 
-
-import { Post } from './post'
-import { Comment } from './Comment'
+import { Post } from './../schemas/post'
+import { Comment } from './../schemas/Comment'
 
 
 @Injectable({
@@ -46,9 +45,9 @@ export class PostService {
 			)
 
 		return forkJoin([post, comments])
-			.pipe(map(([x, y]) => {
-				x.comments = y;
-				return <Post>x;
+			.pipe(map(([post, comments]) => {
+				post.comments = comments;
+				return <Post>post;
 			}))
 
 	}
